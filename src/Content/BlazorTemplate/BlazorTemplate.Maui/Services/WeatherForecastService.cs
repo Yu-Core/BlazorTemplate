@@ -1,5 +1,4 @@
 ﻿using BlazorTemplate.Shared;
-using Microsoft.Maui.Controls;
 using System.Text.Json;
 
 namespace BlazorTemplate.Maui.Services

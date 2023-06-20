@@ -1,0 +1,45 @@
+{
+  "$schema": "http://json.schemastore.org/template",
+  "author": "Yu-Core",
+  "classifications": [
+    "Blazor",
+    "MASA"
+  ],
+  "description": "A Blazor template with Masa.Blazor",
+  "preferNameDirectory": true,
+  "primaryOutputs": [
+    {
+      "path": "BlazorTemplate.Maui.csproj"
+    },
+    {
+      "path": "BlazorTemplate.Photino.csproj"
+    },
+    {
+      "path": "BlazorTemplate.WebAssembly.csproj"
+    },
+    {
+      "path": "BlazorTemplate.Server.csproj"
+    },
+    {
+      "path": "BlazorTemplate.Winforms.csproj"
+    },
+    {
+      "path": "BlazorTemplate.Wpf.csproj"
+    },
+    {
+      "path": "BlazorMaui.Rcl.csproj"
+    },
+    {
+      "path": "BlazorMaui.Shared.csproj"
+    }
+  ],
+  "identity": "Yu-Core.Blazor.Template",
+  "name": "Blazor Template",
+  "shortName": "yucore-blazor",
+  "sourceName": "BlazorTemplate",
+  "defaultName": "BlazorApp",
+  "tags": {
+    "language": "C#",
+    "type": "project"
+  }
+}

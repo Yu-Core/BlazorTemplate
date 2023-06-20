@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2012/06/nuspec.xsd">
+	<metadata>
+		<id>Yu-Core.Template</id>
+		<version>1.0.0-rc.3</version>
+		<!-- <version>$version$</version> -->
+		<description>
+			Yu-Core`s Template
+		</description>
+		<authors>Yu-Core</authors>
+		<license type="expression">Apache-2.0</license>
+		<projectUrl>https://github.com/Yu-Core/BlazorTemplate</projectUrl>
+		<icon>images\icon.png</icon>
+		<packageTypes>
+			<packageType name="Template" />
+		</packageTypes>
+	</metadata>
+	<files>
+		<file src=".\icon.png" target="images\" />
+		<file src="Content\**\*.*" exclude="Content\**\bin\**;Content\**\obj\**;Content\**\.vs\**" target="Content" />
+	</files>
+</package>
