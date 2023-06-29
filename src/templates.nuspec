@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2012/06/nuspec.xsd">
 	<metadata>
 		<id>Yu-Core.Template</id>
-		<version>1.0.0-rc.3</version>
+		<version>1.0.0-rc.5</version>
 		<!-- <version>$version$</version> -->
 		<description>
 			Yu-Core`s Template
