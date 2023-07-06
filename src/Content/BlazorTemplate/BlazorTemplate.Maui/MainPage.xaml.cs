@@ -1,4 +1,4 @@
-﻿namespace BlazorTemplate
+﻿namespace BlazorTemplate.Maui
 {
     public partial class MainPage : ContentPage
     {

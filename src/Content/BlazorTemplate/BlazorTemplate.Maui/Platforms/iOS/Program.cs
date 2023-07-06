@@ -1,7 +1,7 @@
 ﻿using ObjCRuntime;
 using UIKit;
 
-namespace BlazorTemplate
+namespace BlazorTemplate.Maui
 {
     public class Program
     {

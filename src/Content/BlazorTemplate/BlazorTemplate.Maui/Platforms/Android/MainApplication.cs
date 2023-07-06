@@ -1,7 +1,7 @@
 ﻿using Android.App;
 using Android.Runtime;
 
-namespace BlazorTemplate
+namespace BlazorTemplate.Maui
 {
     [Application]
     public class MainApplication : MauiApplication

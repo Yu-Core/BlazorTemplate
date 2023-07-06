@@ -2,7 +2,7 @@
 using BlazorTemplate.Shared;
 using Microsoft.Extensions.Logging;
 
-namespace BlazorTemplate
+namespace BlazorTemplate.Maui
 {
     public static class MauiProgram
     {
