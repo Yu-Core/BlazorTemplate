@@ -1,5 +1,4 @@
-using BlazorTemplate.Server.Services;
-using BlazorTemplate.Shared;
+using BlazorTemplate.Server.Extensions;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -7,7 +6,7 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddRazorPages();
 builder.Services.AddServerSideBlazor();
 builder.Services.AddMasaBlazor();
-builder.Services.AddSingleton<IWeatherForecastService,WeatherForecastService>();
+builder.Services.AddDependencyInjection();
 
 var app = builder.Build();
 

@@ -1,4 +1,5 @@
-﻿using BlazorTemplate.Maui.Services;
+﻿using BlazorTemplate.Maui.Extensions;
+using BlazorTemplate.Maui.Services;
 using BlazorTemplate.Shared;
 using Microsoft.Extensions.Logging;
 
@@ -22,8 +23,7 @@ namespace BlazorTemplate.Maui
 #endif
             builder.Services.AddMasaBlazor();
 
-
-            builder.Services.AddSingleton<IWeatherForecastService, WeatherForecastService>();
+            builder.Services.AddDependencyInjection();
 
             return builder.Build();
         }

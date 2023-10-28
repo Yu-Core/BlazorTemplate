@@ -1,6 +1,5 @@
 using BlazorTemplate.Rcl;
-using BlazorTemplate.Shared;
-using BlazorTemplate.WebAssembly.Services;
+using BlazorTemplate.WebAssembly.Extensions;
 using Microsoft.AspNetCore.Components.Web;
 using Microsoft.AspNetCore.Components.WebAssembly.Hosting;
 
@@ -11,7 +10,6 @@ builder.RootComponents.Add<HeadOutlet>("head::after");
 builder.Services.AddScoped(sp => new HttpClient { BaseAddress = new Uri(builder.HostEnvironment.BaseAddress) });
 
 builder.Services.AddMasaBlazor();
-builder.Services.AddScoped<IWeatherForecastService, WeatherForecastService>();
-
+builder.Services.AddDependencyInjection();
 
 await builder.Build().RunAsync();

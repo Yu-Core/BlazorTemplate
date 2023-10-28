@@ -1,6 +1,5 @@
 using BlazorTemplate.Rcl;
-using BlazorTemplate.Shared;
-using BlazorTemplate.Winforms.Services;
+using BlazorTemplate.Winforms.Extensions;
 using Microsoft.AspNetCore.Components.WebView.WindowsForms;
 using Microsoft.Extensions.DependencyInjection;
 
@@ -14,14 +13,18 @@ namespace BlazorTemplate.Winforms
 
             var services = new ServiceCollection();
             services.AddWindowsFormsBlazorWebView();
+#if DEBUG
+            services.AddBlazorWebViewDeveloperTools();
+#endif
             services.AddMasaBlazor();
-            services.AddSingleton<IWeatherForecastService, WeatherForecastService>();
+            services.AddDependencyInjection();
 
             blazorWebView1.HostPage = "wwwroot/index.html";
             blazorWebView1.Services = services.BuildServiceProvider();
             blazorWebView1.RootComponents.Add<App>("#app");
         }
 
+        //Fix resource not released after closing app
         protected override void OnClosed(EventArgs e)
         {
             base.OnClosed(e);

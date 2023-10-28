@@ -1,5 +1,5 @@
 ﻿@page "/fetchdata"
-@inject IWeatherForecastService ForecastService
+@inject IStaticWebAssets StaticWebAssets
 
 <PageTitle>Weather forecast</PageTitle>
 
@@ -43,7 +43,7 @@ else
 
     protected override async Task OnInitializedAsync()
     {
-        _forecasts = await ForecastService.GetForecastAsync();
+        _forecasts = await StaticWebAssets.ReadJsonAsync<WeatherForecast[]>("sample-data/weather.json");
     }
 
 }

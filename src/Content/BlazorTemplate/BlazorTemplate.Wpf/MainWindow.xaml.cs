@@ -1,16 +1,6 @@
-﻿using BlazorTemplate.Shared;
-using BlazorTemplate.Wpf.Services;
+﻿using BlazorTemplate.Wpf.Extensions;
 using Microsoft.Extensions.DependencyInjection;
-using System.Text;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 
 namespace BlazorTemplate.Wpf
 {
@@ -25,8 +15,12 @@ namespace BlazorTemplate.Wpf
 
             var serviceCollection = new ServiceCollection();
             serviceCollection.AddWpfBlazorWebView();
+#if DEBUG
+            serviceCollection.AddBlazorWebViewDeveloperTools();
+#endif
             serviceCollection.AddMasaBlazor();
-            serviceCollection.AddSingleton<IWeatherForecastService, WeatherForecastService>();
+            serviceCollection.AddDependencyInjection();
+
             Resources.Add("services", serviceCollection.BuildServiceProvider());
         }
     }

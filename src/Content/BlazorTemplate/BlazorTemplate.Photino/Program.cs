@@ -1,4 +1,5 @@
-﻿using BlazorTemplate.Photino.Services;
+﻿using BlazorTemplate.Photino.Extensions;
+using BlazorTemplate.Photino.Services;
 using BlazorTemplate.Rcl;
 using BlazorTemplate.Shared;
 using Microsoft.Extensions.DependencyInjection;
@@ -13,7 +14,7 @@ internal class Program
 
         appBuilder.RootComponents.Add<App>("#app");
         appBuilder.Services.AddMasaBlazor();
-        appBuilder.Services.AddScoped<IWeatherForecastService, WeatherForecastService>();
+        appBuilder.Services.AddDependencyInjection();
 
         var app = appBuilder.Build();
 
