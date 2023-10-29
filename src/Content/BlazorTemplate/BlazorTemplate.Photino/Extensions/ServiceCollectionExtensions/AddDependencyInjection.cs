@@ -1,5 +1,5 @@
-﻿using BlazorTemplate.Shared;
-using BlazorTemplate.Photino.Services;
+﻿using BlazorTemplate.Photino.Services;
+using BlazorTemplate.Rcl.IService;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace BlazorTemplate.Photino.Extensions

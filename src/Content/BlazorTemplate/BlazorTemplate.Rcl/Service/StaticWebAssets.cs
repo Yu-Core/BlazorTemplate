@@ -1,10 +1,10 @@
-﻿using BlazorTemplate.Shared;
+﻿using BlazorTemplate.Rcl.IService;
 
 namespace BlazorTemplate.Rcl.Service
 {
     public abstract class StaticWebAssets : IStaticWebAssets
     {
-        private Lazy<string?> _rclAssemblyName = new(() => typeof(StaticWebAssets).Assembly.GetName().Name);
+        private readonly Lazy<string?> _rclAssemblyName = new(() => typeof(StaticWebAssets).Assembly.GetName().Name);
 
         protected string? RclAssemblyName => _rclAssemblyName.Value;
 

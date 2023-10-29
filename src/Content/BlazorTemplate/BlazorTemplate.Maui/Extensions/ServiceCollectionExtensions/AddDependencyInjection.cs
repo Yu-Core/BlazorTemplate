@@ -1,5 +1,5 @@
 ﻿using BlazorTemplate.Maui.Services;
-using BlazorTemplate.Shared;
+using BlazorTemplate.Rcl.IService;
 
 namespace BlazorTemplate.Maui.Extensions
 {

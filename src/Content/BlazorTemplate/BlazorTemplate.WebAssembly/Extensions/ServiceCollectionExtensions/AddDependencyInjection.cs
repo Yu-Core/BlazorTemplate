@@ -1,4 +1,4 @@
-﻿using BlazorTemplate.Shared;
+﻿using BlazorTemplate.Rcl.IService;
 using BlazorTemplate.WebAssembly.Services;
 
 namespace BlazorTemplate.WebAssembly.Extensions

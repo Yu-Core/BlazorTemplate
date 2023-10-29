@@ -1,4 +1,4 @@
-﻿namespace BlazorTemplate.Shared
+﻿namespace BlazorTemplate.Rcl.IService
 {
     public interface IStaticWebAssets
     {

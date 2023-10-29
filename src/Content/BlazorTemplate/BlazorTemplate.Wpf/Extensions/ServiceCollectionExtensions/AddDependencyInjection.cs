@@ -1,5 +1,5 @@
-﻿using BlazorTemplate.Wpf.Services;
-using BlazorTemplate.Shared;
+﻿using BlazorTemplate.Rcl.IService;
+using BlazorTemplate.Wpf.Services;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace BlazorTemplate.Wpf.Extensions
