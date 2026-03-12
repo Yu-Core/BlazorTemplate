@@ -8,15 +8,21 @@
 			A Blazor template with Masa.Blazor component library integrated, supporting multiple platforms including Blazor Server, Blazor WebAssembly, Blazor Hybrid.
 		</description>
 		<authors>Yu-Core</authors>
-		<license type="expression">Apache-2.0</license>
+		<license type="expression">MIT</license>
+    	<licenseUrl>https://licenses.nuget.org/MIT</licenseUrl>
 		<projectUrl>https://github.com/Yu-Core/BlazorTemplate</projectUrl>
 		<icon>images\icon.png</icon>
+		<readme>README.md</readme>
 		<packageTypes>
 			<packageType name="Template" />
 		</packageTypes>
+		<repository type="git" url="https://github.com/Yu-Core/BlazorTemplate.git" />
 	</metadata>
 	<files>
 		<file src=".\icon.png" target="images\" />
+		<file src="..\README.md" target="" />
+		<file src="..\LICENSE.txt" target="" />
+		<file src="..\THIRD-PARTY-NOTICES.TXT" target="" />
 		<file src="Content\**\*.*" exclude="Content\**\bin\**;Content\**\obj\**;Content\**\.vs\**" target="Content" />
 	</files>
 </package>

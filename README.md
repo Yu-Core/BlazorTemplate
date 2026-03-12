@@ -1,6 +1,6 @@
 # BlazorTemplate
 
-A project template that combines multiple Blazor patterns and enables them to share a common UI
+A Blazor template with Masa.Blazor component library integrated, supporting multiple platforms including Blazor Server, Blazor WebAssembly, Blazor Hybrid.
 
 - Blazor WebAssembly
 - Blazor WebApp (Global Server) 
