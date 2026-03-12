@@ -1,5 +1,4 @@
-﻿using BlazorTemplate.Photino.Services;
-using BlazorTemplate.Rcl.IService;
+﻿using BlazorTemplate.Rcl.Service;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace BlazorTemplate.Photino.Extensions
@@ -8,7 +7,7 @@ namespace BlazorTemplate.Photino.Extensions
     {
         public static IServiceCollection AddDependencyInjection(this IServiceCollection services)
         {
-            services.AddSingleton<IStaticWebAssets, StaticWebAssets>();
+            services.AddSingleton<IStaticWebAssets, Services.StaticWebAssets>();
             return services;
         }
     }

@@ -3,16 +3,17 @@
 A project template that combines multiple Blazor patterns and enables them to share a common UI
 
 - Blazor WebAssembly
-- Blazor Server
+- Blazor WebApp (Global Server) 
+- Gtk
 - Maui
+- Photino
 - Winforms
 - WPF
-- Photino
 
 ## Install template
 
 ```shell
-dotnet new install Yu-Core.Template
+dotnet new install Yu-Core.BlazorTemplate
 ```
 
 ## 
@@ -20,5 +21,5 @@ dotnet new install Yu-Core.Template
 ## Uninstall template
 
 ```shell
-dotnet new uninstall Yu-Core.Template
+dotnet new uninstall Yu-Core.BlazorTemplate
 ```

@@ -1,45 +1,488 @@
 {
-  "$schema": "http://json.schemastore.org/template",
+  "$schema": "https://json.schemastore.org/template",
   "author": "Yu-Core",
   "classifications": [
+    "Android",
     "Blazor",
-    "MASA"
-  ],
-  "description": "A Blazor template with Masa.Blazor",
-  "preferNameDirectory": true,
-  "primaryOutputs": [
-    {
-      "path": "BlazorTemplate.Maui.csproj"
-    },
-    {
-      "path": "BlazorTemplate.Photino.csproj"
-    },
-    {
-      "path": "BlazorTemplate.WebAssembly.csproj"
-    },
-    {
-      "path": "BlazorTemplate.Server.csproj"
-    },
-    {
-      "path": "BlazorTemplate.Winforms.csproj"
-    },
-    {
-      "path": "BlazorTemplate.Wpf.csproj"
-    },
-    {
-      "path": "BlazorMaui.Rcl.csproj"
-    },
-    {
-      "path": "BlazorMaui.Shared.csproj"
-    }
+    "Blazor Hybrid",
+    "GTK",
+    "iOS",
+    "Mac Catalyst",
+    "macOS",
+    "MASA",
+    "MAUI",
+    "Mobile",
+    "Photino",
+    "Windows",
+    "WPF",
+    "Winforms"
   ],
   "identity": "Yu-Core.Blazor.Template",
-  "name": "Blazor Template",
-  "shortName": "yucore-blazor",
-  "sourceName": "BlazorTemplate",
-  "defaultName": "BlazorApp",
+  "name": "Yu-Core Blazor Application",
+  "description": "A Blazor template with Masa.Blazor component library integrated, supporting multiple platforms including Blazor Server, Blazor WebAssembly, Blazor Hybrid.",
+  "shortName": "yu-core-blazor",
   "tags": {
     "language": "C#",
-    "type": "project"
+    "type": "solution"
+  },
+  "sourceName": "BlazorTemplate",
+  "defaultName": "BlazorApp",
+  "primaryOutputs": [
+    {
+      "condition": "(HostIdentifier == \"dotnetcli\" || HostIdentifier == \"dotnetcli-preview\")",
+      "path": "BlazorTemplate.slnx"
+    },
+    {
+      "path": "BlazorTemplate.Gtk/BlazorTemplate.Gtk.csproj"
+    },
+    {
+      "path": "BlazorTemplate.Maui/BlazorTemplate.Maui.csproj"
+    },
+    {
+      "path": "BlazorTemplate.Photino/BlazorTemplate.Photino.csproj"
+    },
+    {
+      "path": "BlazorTemplate.Rcl/BlazorTemplate.Rcl.csproj"
+    },
+    {
+      "path": "BlazorTemplate.Server/BlazorTemplate.Server.csproj"
+    },
+    {
+      "path": "BlazorTemplate.WebAssembly/BlazorTemplate.WebAssembly.csproj"
+    },
+    {
+      "path": "BlazorTemplate.Winforms/BlazorTemplate.Winforms.csproj"
+    },
+    {
+      "path": "BlazorTemplate.Wpf/BlazorTemplate.Wpf.csproj"
+    }
+  ],
+  "sources": [
+    {
+      "source": "./",
+      "target": "./",
+      "copyOnly": [
+        "**/*.svg",
+        "**/*.ttf"
+      ],
+      "modifiers": [
+        {
+          "condition": "(!Gtk)",
+          "exclude": [
+            "BlazorTemplate.Gtk/**"
+          ]
+        },
+        {
+          "condition": "(!Maui)",
+          "exclude": [
+            "BlazorTemplate.Maui/**"
+          ]
+        },
+        {
+          "condition": "(!Photino)",
+          "exclude": [
+            "BlazorTemplate.Photino/**"
+          ]
+        },
+        {
+          "condition": "(!Server)",
+          "exclude": [
+            "BlazorTemplate.Server/**"
+          ]
+        },
+        {
+          "condition": "(!WebAssembly)",
+          "exclude": [
+            "BlazorTemplate.WebAssembly/**"
+          ]
+        },
+        {
+          "condition": "(!Winforms)",
+          "exclude": [
+            "BlazorTemplate.Winforms/**"
+          ]
+        },
+        {
+          "condition": "(!Wpf)",
+          "exclude": [
+            "BlazorTemplate.Wpf/**"
+          ]
+        },
+        {
+          "condition": "(!PWA)",
+          "exclude": [
+            "BlazorTemplate.WebAssembly/wwwroot/service-worker*.js",
+            "BlazorTemplate.WebAssembly/wwwroot/manifest.webmanifest",
+            "BlazorTemplate.WebAssembly/wwwroot/icon-512.png"
+          ]
+        },
+        {
+          "condition": "(iconSet == 'mdi')",
+          "exclude": [
+            "BlazorTemplate.Rcl/wwwroot/css/fontawesome/**",
+            "BlazorTemplate.Rcl/wwwroot/css/material/**"
+          ]
+        },
+        {
+          "condition": "(iconSet == 'md')",
+          "exclude": [
+            "BlazorTemplate.Rcl/wwwroot/css/fontawesome/**",
+            "BlazorTemplate.Rcl/wwwroot/css/materialdesign/**"
+          ]
+        },
+        {
+          "condition": "(iconSet == 'fa')",
+          "exclude": [
+            "BlazorTemplate.Rcl/wwwroot/css/material/**",
+            "BlazorTemplate.Rcl/wwwroot/css/materialdesign/**"
+          ]
+        },
+        {
+          "condition": "(!SampleContent)",
+          "exclude": [
+            "BlazorTemplate.Rcl/Layout/NavMenu.*",
+            "BlazorTemplate.Rcl/Pages/Counter.*",
+            "BlazorTemplate.Rcl/Pages/Weather.*",
+            "BlazorTemplate.Rcl/wwwroot/sample-data/**",
+            "BlazorTemplate.Rcl/wwwroot/favicon.*"
+          ]
+        },
+        {
+          "condition": "(HostIdentifier != \"dotnetcli\" && HostIdentifier != \"dotnetcli-preview\")",
+          "exclude": [
+            "*.slnx"
+          ]
+        }
+      ]
+    }
+  ],
+  "preferNameDirectory": true,
+  "guids": [
+    "87919f9c-abb8-48e5-bae7-eb1b4140f6a8"
+  ],
+  "symbols": {
+    "Gtk": {
+      "type": "parameter",
+      "datatype": "bool",
+      "description": "Add Blazor Hybrid application based on GTK"
+    },
+    "Maui": {
+      "type": "parameter",
+      "datatype": "bool",
+      "description": "Add Blazor Hybrid application based on Maui",
+      "defaultValue": "true"
+    },
+    "Photino": {
+      "type": "parameter",
+      "datatype": "bool",
+      "description": "Add Blazor Hybrid application based on Photino"
+    },
+    "Server": {
+      "type": "parameter",
+      "datatype": "bool",
+      "description": "Add Blazor Server application based on Blazor WebApp",
+      "defaultValue": "true"
+    },
+    "WebAssembly": {
+      "type": "parameter",
+      "datatype": "bool",
+      "description": "Add Blazor WebAssembly application",
+      "defaultValue": "true"
+    },
+    "Winforms": {
+      "type": "parameter",
+      "datatype": "bool",
+      "description": "Add Blazor Hybrid application based on Winforms"
+    },
+    "Wpf": {
+      "type": "parameter",
+      "datatype": "bool",
+      "description": "Add Blazor Hybrid application based on Wpf"
+    },
+    "iconSet": {
+      "type": "parameter",
+      "description": "The icon set to use.",
+      "datatype": "choice",
+      "choices": [
+        {
+          "choice": "mdi",
+          "description": "Material Design Icons"
+        },
+        {
+          "choice": "md",
+          "description": "Material Icons"
+        },
+        {
+          "choice": "fa",
+          "description": "Font Awesome 5"
+        }
+      ],
+      "defaultValue": "mdi"
+    },
+    "mdi": {
+      "type": "computed",
+      "value": "(iconSet == \"mdi\")"
+    },
+    "md": {
+      "type": "computed",
+      "value": "(iconSet == \"md\")"
+    },
+    "fa": {
+      "type": "computed",
+      "value": "(iconSet == \"fa\")"
+    },
+    "applicationId": {
+      "type": "parameter",
+      "description": "Overrides the $(ApplicationId) in the project",
+      "datatype": "string"
+    },
+    "Framework": {
+      "type": "parameter",
+      "description": "The target framework for the project.",
+      "datatype": "choice",
+      "choices": [
+        {
+          "choice": "net10.0",
+          "description": "Target net10.0"
+        }
+      ],
+      "replaces": "net10.0",
+      "defaultValue": "net10.0"
+    },
+    "HostIdentifier": {
+      "type": "bind",
+      "binding": "HostIdentifier"
+    },
+    "PhoneProductId": {
+      "type": "generated",
+      "generator": "guid",
+      "replaces": "$guid9$"
+    },
+    "nameToLower": {
+      "type": "generated",
+      "generator": "casing",
+      "parameters": {
+        "source": "name",
+        "toLower": true
+      }
+    },
+    "nameToAppId": {
+      "type": "generated",
+      "generator": "regex",
+      "dataType": "string",
+      "parameters": {
+        "source": "nameToLower",
+        "steps": [
+          {
+            "regex": "[^a-z0-9_\\.]",
+            "replacement": ""
+          }
+        ]
+      }
+    },
+    "defaultAppId": {
+      "type": "generated",
+      "generator": "join",
+      "parameters": {
+        "symbols": [
+          {
+            "type": "const",
+            "value": "com.companyname."
+          },
+          {
+            "type": "ref",
+            "value": "nameToAppId"
+          }
+        ]
+      }
+    },
+    "finalAppId": {
+      "type": "generated",
+      "generator": "coalesce",
+      "parameters": {
+        "sourceVariableName": "applicationId",
+        "fallbackVariableName": "defaultAppId"
+      },
+      "replaces": "com.companyname.blazortemplate"
+    },
+    "serverKestrelHttpPort": {
+      "type": "parameter",
+      "datatype": "integer",
+      "description": "Port number to use for the HTTP endpoint in launchSettings.json."
+    },
+    "serverKestrelHttpPortGenerated": {
+      "type": "generated",
+      "generator": "port",
+      "parameters": {
+        "low": 5000,
+        "high": 5300
+      }
+    },
+    "serverKestrelHttpPortReplacer": {
+      "type": "generated",
+      "generator": "coalesce",
+      "parameters": {
+        "sourceVariableName": "serverKestrelHttpPort",
+        "fallbackVariableName": "serverKestrelHttpPortGenerated"
+      },
+      "replaces": "5500",
+      "onlyIf": [
+        {
+          "after": "localhost:"
+        }
+      ]
+    },
+    "serverKestrelHttpsPort": {
+      "type": "parameter",
+      "datatype": "integer",
+      "description": "Port number to use for the HTTPS endpoint in launchSettings.json. This option is only applicable when the parameter no-https is not used (no-https will be ignored if Individual auth is used)."
+    },
+    "serverKestrelHttpsPortGenerated": {
+      "type": "generated",
+      "generator": "port",
+      "parameters": {
+        "low": 7000,
+        "high": 7300
+      }
+    },
+    "serverKestrelHttpsPortReplacer": {
+      "type": "generated",
+      "generator": "coalesce",
+      "parameters": {
+        "sourceVariableName": "serverKestrelHttpsPort",
+        "fallbackVariableName": "serverKestrelHttpsPortGenerated"
+      },
+      "replaces": "5501",
+      "onlyIf": [
+        {
+          "after": "localhost:"
+        }
+      ]
+    },
+    "wasmKestrelHttpPort": {
+      "type": "parameter",
+      "datatype": "integer",
+      "description": "Port number to use for the HTTP endpoint in launchSettings.json."
+    },
+    "wasmKestrelHttpPortGenerated": {
+      "type": "generated",
+      "generator": "port",
+      "parameters": {
+        "low": 5000,
+        "high": 5300
+      }
+    },
+    "wasmKestrelHttpPortReplacer": {
+      "type": "generated",
+      "generator": "coalesce",
+      "parameters": {
+        "sourceVariableName": "wasmKestrelHttpPort",
+        "fallbackVariableName": "wasmKestrelHttpPortGenerated"
+      },
+      "replaces": "5000",
+      "onlyIf": [
+        {
+          "after": "localhost:"
+        }
+      ]
+    },
+    "wasmKestrelHttpsPort": {
+      "type": "parameter",
+      "datatype": "integer",
+      "description": "Port number to use for the HTTPS endpoint in launchSettings.json. This option is only applicable when the parameter no-https is not used (no-https will be ignored if Individual auth is used)."
+    },
+    "wasmKestrelHttpsPortGenerated": {
+      "type": "generated",
+      "generator": "port",
+      "parameters": {
+        "low": 7000,
+        "high": 7300
+      }
+    },
+    "wasmKestrelHttpsPortReplacer": {
+      "type": "generated",
+      "generator": "coalesce",
+      "parameters": {
+        "sourceVariableName": "wasmKestrelHttpsPort",
+        "fallbackVariableName": "wasmKestrelHttpsPortGenerated"
+      },
+      "replaces": "5001",
+      "onlyIf": [
+        {
+          "after": "localhost:"
+        }
+      ]
+    },
+    "iisHttpPort": {
+      "type": "parameter",
+      "datatype": "integer",
+      "description": "Port number to use for the IIS Express HTTP endpoint in launchSettings.json."
+    },
+    "iisHttpPortGenerated": {
+      "type": "generated",
+      "generator": "port"
+    },
+    "iisHttpPortReplacer": {
+      "type": "generated",
+      "generator": "coalesce",
+      "parameters": {
+        "sourceVariableName": "iisHttpPort",
+        "fallbackVariableName": "iisHttpPortGenerated"
+      },
+      "replaces": "8080"
+    },
+    "iisHttpsPort": {
+      "type": "parameter",
+      "datatype": "integer",
+      "description": "Port number to use for the IIS Express HTTPS endpoint in launchSettings.json. This option is only applicable when the parameter no-https is not used (no-https will be ignored if Individual auth is used)."
+    },
+    "iisHttpsPortGenerated": {
+      "type": "generated",
+      "generator": "port",
+      "parameters": {
+        "low": 44300,
+        "high": 44399
+      }
+    },
+    "iisHttpsPortReplacer": {
+      "type": "generated",
+      "generator": "coalesce",
+      "parameters": {
+        "sourceVariableName": "iisHttpsPort",
+        "fallbackVariableName": "iisHttpsPortGenerated"
+      },
+      "replaces": "44300"
+    },
+    "PWA": {
+      "type": "parameter",
+      "datatype": "bool",
+      "defaultValue": "false",
+      "displayName": "_Progressive Web Application",
+      "description": "If specified, produces a Progressive Web Application (PWA) supporting installation and offline use.",
+      "isEnabled": "WebAssembly"
+    },
+    "IncludeSampleContent": {
+      "type": "parameter",
+      "datatype": "bool",
+      "defaultValue": "true",
+      "displayName": "_Include sample pages",
+      "description": "Configures whether to add sample pages and styling to demonstrate basic usage patterns."
+    },
+    "Empty": {
+      "type": "parameter",
+      "datatype": "bool",
+      "defaultValue": "false",
+      "description": "Configures whether to omit sample pages and styling that demonstrate basic usage patterns."
+    },
+    "empty": {
+      "type": "parameter",
+      "datatype": "bool",
+      "defaultValue": "false",
+      "description": "Configures whether to omit sample pages and styling that demonstrate basic usage patterns."
+    },
+    "SampleContent": {
+      "type": "computed",
+      "value": "(((IncludeSampleContent && (HostIdentifier != \"dotnetcli\" && HostIdentifier != \"dotnetcli-preview\"))) || ((!Empty && (HostIdentifier == \"dotnetcli\" || HostIdentifier == \"dotnetcli-preview\")) && (!empty && (HostIdentifier == \"dotnetcli\" || HostIdentifier == \"dotnetcli-preview\"))))"
+    }
   }
 }

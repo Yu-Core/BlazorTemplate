@@ -1,0 +1,64 @@
+{
+    "$schema": "https://json.schemastore.org/dotnetcli.host",
+    "symbolInfo": {
+        "Gtk": {
+            "longName": "gtk",
+            "shortName": ""
+        },
+        "Maui": {
+            "longName": "maui",
+            "shortName": ""
+        },
+        "Photino": {
+            "longName": "photino",
+            "shortName": ""
+        },
+        "Server": {
+            "longName": "server",
+            "shortName": ""
+        },
+        "WebAssembly": {
+            "longName": "wasm",
+            "shortName": ""
+        },
+        "Winforms": {
+            "longName": "winforms",
+            "shortName": ""
+        },
+        "Wpf": {
+            "longName": "wpf",
+            "shortName": ""
+        },
+        "iconSet": {
+            "longName": "icon",
+            "shortName": ""
+        },
+        "Empty": {
+            "isHidden": true
+        },
+        "IncludeSampleContent": {
+            "isHidden": true
+        },
+        "Framework": {
+            "longName": "framework"
+        },
+        "serverKestrelHttpPort": {
+            "isHidden": true
+        },
+        "serverKestrelHttpsPort": {
+            "isHidden": true
+        },
+        "wasmKestrelHttpPort": {
+            "isHidden": true
+        },
+        "wasmKestrelHttpsPort": {
+            "isHidden": true
+        },
+        "iisHttpPort": {
+            "isHidden": true
+        },
+        "iisHttpsPort": {
+            "isHidden": true
+        }
+    }
+}

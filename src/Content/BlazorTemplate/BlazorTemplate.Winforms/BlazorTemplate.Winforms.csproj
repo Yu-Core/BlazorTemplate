@@ -2,18 +2,20 @@
 
 	<PropertyGroup>
 		<OutputType>WinExe</OutputType>
-		<TargetFramework>net7.0-windows</TargetFramework>
+		<TargetFramework>net10.0-windows</TargetFramework>
 		<Nullable>enable</Nullable>
 		<UseWindowsForms>true</UseWindowsForms>
 		<ImplicitUsings>enable</ImplicitUsings>
 	</PropertyGroup>
 
 	<ItemGroup>
-		<PackageReference Include="Microsoft.AspNetCore.Components.WebView.WindowsForms" Version="7.0.96" />
+		<PackageReference Include="Microsoft.AspNetCore.Components.WebView.WindowsForms" Version="10.0.*" />
 	</ItemGroup>
 
 	<ItemGroup>
-		<ProjectReference Include="..\BlazorTemplate.Rcl\BlazorTemplate.Rcl.csproj" />
+		<ProjectReference Include="..\BlazorTemplate.Rcl\BlazorTemplate.Rcl.csproj" >
+			<AdditionalProperties>EnableCopyRclStaticFiles=true</AdditionalProperties>
+		</ProjectReference>
 	</ItemGroup>
 
 </Project>

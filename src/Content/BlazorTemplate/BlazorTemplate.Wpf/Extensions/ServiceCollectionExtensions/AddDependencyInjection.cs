@@ -1,5 +1,4 @@
-﻿using BlazorTemplate.Rcl.IService;
-using BlazorTemplate.Wpf.Services;
+﻿using BlazorTemplate.Rcl.Service;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace BlazorTemplate.Wpf.Extensions
@@ -8,7 +7,7 @@ namespace BlazorTemplate.Wpf.Extensions
     {
         public static IServiceCollection AddDependencyInjection(this IServiceCollection services)
         {
-            services.AddSingleton<IStaticWebAssets, StaticWebAssets>();
+            services.AddSingleton<IStaticWebAssets, Services.StaticWebAssets>();
             return services;
         }
     }

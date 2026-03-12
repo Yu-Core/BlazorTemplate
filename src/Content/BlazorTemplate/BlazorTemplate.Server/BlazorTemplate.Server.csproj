@@ -1,13 +1,15 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk.Web">
 
-  <PropertyGroup>
-    <TargetFramework>net7.0</TargetFramework>
-    <Nullable>enable</Nullable>
-    <ImplicitUsings>enable</ImplicitUsings>
-  </PropertyGroup>
+	<PropertyGroup>
+		<TargetFramework>net10.0</TargetFramework>
+		<Nullable>enable</Nullable>
+		<ImplicitUsings>enable</ImplicitUsings>
+	</PropertyGroup>
 
-  <ItemGroup>
-    <ProjectReference Include="..\BlazorTemplate.Rcl\BlazorTemplate.Rcl.csproj" />
-  </ItemGroup>
-
+	<ItemGroup>
+		<ProjectReference Include="..\BlazorTemplate.Rcl\BlazorTemplate.Rcl.csproj" >
+			<AdditionalProperties>EnableCopyRclStaticFiles=true</AdditionalProperties>
+		</ProjectReference>
+	</ItemGroup>
+	
 </Project>

@@ -1,6 +1,4 @@
 ﻿using BlazorTemplate.Maui.Extensions;
-using BlazorTemplate.Maui.Services;
-using BlazorTemplate.Shared;
 using Microsoft.Extensions.Logging;
 
 namespace BlazorTemplate.Maui
@@ -18,9 +16,12 @@ namespace BlazorTemplate.Maui
                 });
 
             builder.Services.AddMauiBlazorWebView();
+//-:cnd:noEmit
 #if DEBUG
             builder.Services.AddBlazorWebViewDeveloperTools();
+            builder.Logging.AddDebug();
 #endif
+//+:cnd:noEmit
             builder.Services.AddMasaBlazor();
 
             builder.Services.AddDependencyInjection();

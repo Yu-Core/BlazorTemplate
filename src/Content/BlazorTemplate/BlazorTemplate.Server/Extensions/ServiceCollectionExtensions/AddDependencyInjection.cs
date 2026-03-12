@@ -1,5 +1,4 @@
-﻿using BlazorTemplate.Rcl.IService;
-using BlazorTemplate.Server.Services;
+﻿using BlazorTemplate.Rcl.Service;
 
 namespace BlazorTemplate.Server.Extensions
 {
@@ -7,7 +6,7 @@ namespace BlazorTemplate.Server.Extensions
     {
         public static IServiceCollection AddDependencyInjection(this IServiceCollection services)
         {
-            services.AddScoped<IStaticWebAssets, StaticWebAssets>();
+            services.AddScoped<IStaticWebAssets, Services.StaticWebAssets>();
             return services;
         }
     }

@@ -1,5 +1,4 @@
-﻿using BlazorTemplate.Maui.Services;
-using BlazorTemplate.Rcl.IService;
+﻿using BlazorTemplate.Rcl.Service;
 
 namespace BlazorTemplate.Maui.Extensions
 {
@@ -7,7 +6,7 @@ namespace BlazorTemplate.Maui.Extensions
     {
         public static IServiceCollection AddDependencyInjection(this IServiceCollection services)
         {
-            services.AddSingleton<IStaticWebAssets, StaticWebAssets>();
+            services.AddSingleton<IStaticWebAssets, Services.StaticWebAssets>();
             return services;
         }
     }

@@ -2,17 +2,20 @@
 
 	<PropertyGroup>
 		<OutputType>WinExe</OutputType>
-		<TargetFramework>net7.0</TargetFramework>
+		<TargetFramework>net10.0</TargetFramework>
 		<ImplicitUsings>enable</ImplicitUsings>
 		<Nullable>enable</Nullable>
 	</PropertyGroup>
 
 	<ItemGroup>
-		<PackageReference Include="Photino.Blazor" Version="2.6.0" />
+		<PackageReference Include="Microsoft.AspNetCore.Components.WebView" Version="10.0.*" />
+		<PackageReference Include="Photino.Blazor" Version="4.0.13" />
 	</ItemGroup>
 
 	<ItemGroup>
-		<ProjectReference Include="..\BlazorTemplate.Rcl\BlazorTemplate.Rcl.csproj" />
+		<ProjectReference Include="..\BlazorTemplate.Rcl\BlazorTemplate.Rcl.csproj" >
+			<AdditionalProperties>EnableCopyRclStaticFiles=true</AdditionalProperties>
+		</ProjectReference>
 	</ItemGroup>
 
 	<ItemGroup>
@@ -20,4 +23,5 @@
 			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
 		</Content>
 	</ItemGroup>
+	
 </Project>

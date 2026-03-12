@@ -1,7 +1,5 @@
 ﻿using BlazorTemplate.Photino.Extensions;
-using BlazorTemplate.Photino.Services;
 using BlazorTemplate.Rcl;
-using BlazorTemplate.Shared;
 using Microsoft.Extensions.DependencyInjection;
 using Photino.Blazor;
 
@@ -12,14 +10,14 @@ internal class Program
     {
         var appBuilder = PhotinoBlazorAppBuilder.CreateDefault(args);
 
-        appBuilder.RootComponents.Add<App>("#app");
+        appBuilder.RootComponents.Add<Routes>("#app");
         appBuilder.Services.AddMasaBlazor();
         appBuilder.Services.AddDependencyInjection();
 
         var app = appBuilder.Build();
 
         app.MainWindow
-            .SetTitle("Photino Blazor Sample");
+            .SetTitle("BlazorTemplate.Photino");
 
         AppDomain.CurrentDomain.UnhandledException += (sender, error) =>
         {

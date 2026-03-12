@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk.Razor">
 
 	<PropertyGroup>
-		<TargetFramework>net7.0</TargetFramework>
+		<TargetFramework>net10.0</TargetFramework>
 		<Nullable>enable</Nullable>
 		<ImplicitUsings>enable</ImplicitUsings>
 	</PropertyGroup>
@@ -11,18 +11,14 @@
 	</ItemGroup>
 
 	<ItemGroup>
-		<PackageReference Include="Microsoft.AspNetCore.Components.Web" Version="7.0.13" />
-		<PackageReference Include="Masa.Blazor" Version="1.1.1" />
+		<PackageReference Include="Microsoft.AspNetCore.Components.Web" Version="10.0.*" />
+		<PackageReference Include="Masa.Blazor" Version="1.11.9" />
 	</ItemGroup>
 
-	<ItemGroup>
-		<ProjectReference Include="..\BlazorTemplate.Shared\BlazorTemplate.Shared.csproj" />
-	</ItemGroup>
-
-	<ItemGroup Condition="'$(Configuration)' == 'Debug'">
+	<ItemGroup Condition="'$(EnableCopyRclStaticFiles)' == 'true'">
 		<Content Update="wwwroot\**\*.json">
 			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+			<TargetPath>wwwroot\_content\$(PackageId)\%(RecursiveDir)%(Filename)%(Extension)</TargetPath>
 		</Content>
 	</ItemGroup>
-	
 </Project>

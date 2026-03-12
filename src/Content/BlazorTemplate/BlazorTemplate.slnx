@@ -1,0 +1,26 @@
+<Solution>
+  <!--#if (Gtk) -->
+  <Project Path="BlazorTemplate.Gtk/BlazorTemplate.Gtk.csproj" />
+  <!--#endif -->
+  <!--#if (Maui) -->
+  <Project Path="BlazorTemplate.Maui/BlazorTemplate.Maui.csproj">
+    <Deploy />
+  </Project>
+  <!--#endif -->
+  <!--#if (Photino) -->
+  <Project Path="BlazorTemplate.Photino/BlazorTemplate.Photino.csproj" />
+  <!--#endif -->
+  <Project Path="BlazorTemplate.Rcl/BlazorTemplate.Rcl.csproj" />
+  <!--#if (Server) -->
+  <Project Path="BlazorTemplate.Server/BlazorTemplate.Server.csproj" />
+  <!--#endif -->
+  <!--#if (WebAssembly) -->
+  <Project Path="BlazorTemplate.WebAssembly/BlazorTemplate.WebAssembly.csproj" />
+  <!--#endif -->
+  <!--#if (Winforms) -->
+  <Project Path="BlazorTemplate.Winforms/BlazorTemplate.Winforms.csproj" />
+  <!--#endif -->
+  <!--#if (Wpf) -->
+  <Project Path="BlazorTemplate.Wpf/BlazorTemplate.Wpf.csproj" />
+  <!--#endif -->
+</Solution>

@@ -1,21 +1,21 @@
 ﻿using System.Net.Http.Json;
+using System.Text.Json;
 
 namespace BlazorTemplate.WebAssembly.Services
 {
     public class StaticWebAssets : Rcl.Service.StaticWebAssets
     {
-        private HttpClient HttpClient { get; set; }
+        private readonly HttpClient _httpClient;
 
         public StaticWebAssets(HttpClient httpClient)
         {
-            HttpClient = httpClient;
+            _httpClient = httpClient;
         }
 
-        public override async Task<T> ReadJsonAsync<T>(string relativePath)
+        protected override async Task<T> ReadJsonAsyncCore<T>(string relativePath, JsonSerializerOptions options)
         {
-            string path = $"_content/{RclAssemblyName}/{relativePath}";
-            var result = await HttpClient.GetFromJsonAsync<T>(path).ConfigureAwait(false);
-            return result ?? throw new Exception($"not find json {path}");
+            return await _httpClient.GetFromJsonAsync<T>(relativePath, options).ConfigureAwait(false)
+                ?? throw new JsonException($"Failed to deserialize json from '{relativePath}'.");
         }
     }
 }

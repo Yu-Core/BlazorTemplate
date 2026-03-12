@@ -1,0 +1,65 @@
+{
+    "$schema": "https://json.schemastore.org/ide.host",
+    "icon": "ide/icon.png",
+    "unsupportedHosts": [
+        {
+            "id": "vs",
+            "version": "(,17.3)"
+        }
+    ],
+    "requiredComponents": [
+        {
+            "id": "Microsoft.VisualStudio.ComponentGroup.Maui.All",
+            "hostId": "vs",
+            "componentType": "SetupComponent"
+        }
+    ],
+    "symbolInfo": [
+        {
+            "id": "Gtk",
+            "isVisible": true
+        },
+        {
+            "id": "Maui",
+            "isVisible": true
+        },
+        {
+            "id": "Photino",
+            "isVisible": true
+        },
+        {
+            "id": "Server",
+            "isVisible": true
+        },
+        {
+            "id": "WebAssembly",
+            "isVisible": true
+        },
+        {
+            "id": "Winforms",
+            "isVisible": true
+        },
+        {
+            "id": "Wpf",
+            "isVisible": true
+        },
+        {
+            "id": "iconSet",
+            "name": {
+                "text": "What icon set do you want to use?"
+            },
+            "isVisible": true
+        },
+        {
+            "id": "PWA",
+            "isVisible": true,
+            "persistenceScope": "templateGroup"
+        },
+        {
+            "id": "IncludeSampleContent",
+            "isVisible": true,
+            "persistenceScope": "shared",
+            "persistenceScopeName": "Microsoft"
+        }
+    ]
+}
