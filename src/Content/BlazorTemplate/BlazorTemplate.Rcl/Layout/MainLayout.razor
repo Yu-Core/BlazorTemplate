@@ -1,7 +1,9 @@
 ﻿@inherits LayoutComponentBase
 
 <MApp>
-    <NavMenu></NavMenu>
+@*#if (SampleContent)
+    <NavMenu />
+##endif*@
 
     <MMain>
         <MContainer Fluid>
